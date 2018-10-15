@@ -1,0 +1,7 @@
+# Ignore items from git
+
+.DS_Store
+.idea/*
+*.iml
+/target
+
