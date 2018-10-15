@@ -1,0 +1,100 @@
+{
+  "status": "SUCCESS",
+  "msg": "Retrieve mobile application configurations",
+  "res": {
+    "common": {
+      "itemCategories": [
+        {
+          "id": "cat_001",
+          "name": "Activities and Toys"
+        },
+        {
+          "id": "cat_002",
+          "name": "Car Seats"
+        },
+        {
+          "id": "cat_003",
+          "name": "Strollers"
+        },
+        {
+          "id": "cat_004",
+          "name": "Feeding"
+        },
+        {
+          "id": "cat_005",
+          "name": "Gear"
+        },
+        {
+          "id": "cat_006",
+          "name": "Nursery and Deco"
+        },
+        {
+          "id": "cat_007",
+          "name": "Toddler"
+        },
+        {
+          "id": "cat_008",
+          "name": "Diapering"
+        },
+        {
+          "id": "cat_009",
+          "name": "Health and Safety"
+        },
+        {
+          "id": "cat_010",
+          "name": "Clothes"
+        }
+      ],
+      "special": [
+        {
+          "id": "spc_001",
+          "name": "New in your area"
+        },
+        {
+          "id": "spc_002",
+          "name": "Giveaways"
+        },
+        {
+          "id": "scp_003",
+          "name": "Friends & Followings"
+        },
+        {
+          "id": "scp_004",
+          "name": "YoungDesigner"
+        },
+        {
+          "id": "scp_005",
+          "name": "Spring - Outdoor"
+        },
+        {
+          "id": "scp_006",
+          "name": "Spring - Fashion"
+        },
+        {
+          "id": "scp_007",
+          "name": "Shpock Selections"
+        }
+      ],
+      "itemConditions": [
+        {
+          "id": "can_001",
+          "name": "New"
+        },
+        {
+          "id": "can_002",
+          "name": "used"
+        },
+        {
+          "id": "can_003",
+          "name": "opened"
+        }
+      ],
+      "supportCurrencies": [
+        "USD",
+        "AED"
+      ]
+    },
+    "android": {},
+    "ios": {}
+  }
+}

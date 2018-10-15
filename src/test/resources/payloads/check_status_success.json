@@ -1,0 +1,8 @@
+{
+  "status": "SUCCESS",
+  "msg": "NodeGrid mBaaS status",
+  "res": {
+    "nodegridStatus": "GOOD",
+    "mongoStatus": "CONNECTED"
+  }
+}
