@@ -1,0 +1,17 @@
+{
+  "status": "SUCCESS",
+  "msg": "Conflict - Valid token already exist",
+  "res": [
+    {
+      "_id": "",
+      "__v": 0,
+      "data": {
+        "status": "valid",
+        "expiringTime": 1539740813,
+        "createdTime": 1539654413,
+        "userId": "5a9a1c46e04a380000caa315",
+        "accessToken": ""
+      }
+    }
+  ]
+}

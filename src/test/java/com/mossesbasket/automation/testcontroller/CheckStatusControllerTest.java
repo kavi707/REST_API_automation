@@ -1,9 +1,8 @@
-package com.mossesbasket.automation.test;
+package com.mossesbasket.automation.testcontroller;
 
 import com.mossesbasket.automation.Constant;
 import com.mossesbasket.automation.Util;
-import com.mossesbasket.automation.beforetest.AuthTest;
-import com.mossesbasket.automation.model.consumerconfig.ConsumerConfigBaseModel;
+import com.mossesbasket.automation.model.checkstatus.CheckStatusBaseModel;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
@@ -25,21 +24,21 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.testng.Assert.assertEquals;
 
-public class ConsumerConfigControllerTest extends AuthTest {
+public class CheckStatusControllerTest {
 
-    private String GET_CONSUMER_CONFIG = "/auth/app/consumer/config";
     private HttpResponse httpResponse;
 
     @BeforeTest
     public void setUpAndDoRequest() throws IOException {
-        HttpUriRequest request = new HttpGet(Constant.BASE_URL + GET_CONSUMER_CONFIG);
+        // Url
+        String CHECK_STATUS = "/auth/status";
 
-        // When
+        HttpUriRequest request = new HttpGet(Constant.BASE_URL + CHECK_STATUS);
         httpResponse = HttpClientBuilder.create().build().execute( request );
     }
 
     @Test
-    public void getConsumerConfigStatusCode() {
+    public void validateCheckStatusStatusCode() {
         // Then
         assertThat(
                 httpResponse.getStatusLine().getStatusCode(),
@@ -60,13 +59,13 @@ public class ConsumerConfigControllerTest extends AuthTest {
     public void validateCheckStatusPayload() throws URISyntaxException, IOException {
         // Given
         ClassLoader loader = ClassLoader.getSystemClassLoader();
-        String jsonString = Files.lines(Paths.get(loader.getResource("payloads/consumer_config_success.json").toURI()))
+        String jsonString = Files.lines(Paths.get(loader.getResource("response_payloads/check_status_success.json").toURI()))
                 .parallel()
                 .collect(Collectors.joining());
         JSONObject validateJSON = new JSONObject(jsonString);
 
-        ConsumerConfigBaseModel resource = Util.retrieveResourceFromResponse(
-                httpResponse, ConsumerConfigBaseModel.class);
+        CheckStatusBaseModel resource = Util.retrieveResourceFromResponse(
+                httpResponse, CheckStatusBaseModel.class);
 
         assertThat( validateJSON.get("msg"), Matchers.is( resource.getMsg() ) );
     }
